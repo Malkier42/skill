@@ -1,15 +1,25 @@
 import React from 'react';
+import Cell from './cell';
 import './board.css';
 
 class Board extends React.Component {
   render() {
-    const cells = this.props.G.grid.map((row, i) => (
-      row.map((cell, j) => {
-        const id = 3 * i + j;
+    const { grid, players } = this.props.G;
+
+    const cells = grid.map((row, gridY) => (
+      row.map((cell, gridX) => {
+        const playersPresent = players.filter((player) => {
+          const { y, x } = player.position;
+          return y === gridY && x === gridX;
+        })
+        const id = 3 * gridY + gridX;
+
         return (
-          <div className="cell" key={id}>
-            <div className="space">{this.props.G.grid[i][j]}</div>
-          </div>
+          <Cell
+            key={id}
+            space={grid[gridY][gridX]}
+            playersPresent={playersPresent}
+          />
         );
       })
     ));

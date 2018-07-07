@@ -5,9 +5,21 @@ const Skill = Game({
 
   setup: () => ({
     grid: [
-      [0,0,0,0],
-      [0,0,0,0],
-      [0,0,0,0]
+      ['S','Warp','Arrow','I'],
+      ['Math','Tar Pits','Finish','Ll'],
+      ['Las Vegas','K','Sniper','lL']
+    ],
+    players: [
+      {
+        id: 0,
+        position: { y: 2, x: 1 },
+        color: 'blue',
+      },
+      {
+        id: 1,
+        position: { y: 0, x: 2 },
+        color: 'green',
+      }
     ],
   }),
 });
