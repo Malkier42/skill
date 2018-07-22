@@ -12,9 +12,10 @@ class Cell extends React.Component {
     ));
 
     return (
-      <div className="cell">
-        {tokens}
-        <div className="space">{space}</div>
+      <div className="cell">                
+        <div className="space">{space}
+          <div className="tokens-container">{tokens}</div>
+        </div>
       </div>
     );
   }

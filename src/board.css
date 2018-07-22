@@ -1,7 +1,9 @@
 .container {
   display: grid;
-  width: 30vw;
-  height: 30vw;
+  width: 40vw;
+  height: 40vw;
+  min-width: 500px;
+  min-height: 500px;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(4, 1fr);
 }
@@ -10,7 +12,22 @@
   display: flex;
 }
 
+.tokens-container {
+  position: absolute;
+  left: 10px;
+  top: 10px;
+}
+
+.token {
+  display: inline-block;
+  height: 15px;
+  width: 15px;
+  border-radius: 100%;
+  margin: 4px;
+}
+
 .space {
+  position: relative;
   width: 70%;
   height: 70%;
   border: 1px solid green;

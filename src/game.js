@@ -17,7 +17,7 @@ const Skill = Game({
       },
       {
         id: 1,
-        position: { y: 0, x: 2 },
+        position: { y: 2, x: 1 },
         color: 'green',
       }
     ],
