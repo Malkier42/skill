@@ -22,6 +22,15 @@ const Skill = Game({
       }
     ],
   }),
+
+  moves: {
+    moveToken(G, ctx, x, y) {
+      let players = [...G.players];
+      const player = players.find(player => player.id === Number(ctx.currentPlayer));
+      player.position = { x, y };
+      return {...G, players}
+    },
+  },
 });
 
 export default Skill;

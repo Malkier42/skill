@@ -5,7 +5,7 @@ import './board.css';
 class Board extends React.Component {
   render() {
     const { grid, players } = this.props.G;
-
+    const { moveToken } = this.props.moves;
     const cells = grid.map((row, gridY) => (
       row.map((cell, gridX) => {
         const playersPresent = players.filter((player) => {
@@ -17,8 +17,11 @@ class Board extends React.Component {
         return (
           <Cell
             key={id}
-            space={grid[gridY][gridX]}
+            spaceName={grid[gridY][gridX]}
             playersPresent={playersPresent}
+            x={gridX}
+            y={gridY}
+            moveToken={moveToken}
           />
         );
       })
