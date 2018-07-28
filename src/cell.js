@@ -7,14 +7,16 @@ class Cell extends React.Component {
   }
 
   render() {
-    const { spaceName, playersPresent, x, y } = this.props;
+    const { space, playersPresent, x, y } = this.props;
     return (
-      <div className="cell">                
-        <Space
-          name={spaceName}
-          playersPresent={playersPresent}
-          handleClick={() => this.handleClick(x,y)}
-        />
+      <div className="cell">
+        { space &&
+          <Space
+            name={space.name}
+            playersPresent={playersPresent}
+            handleClick={() => this.handleClick(x,y)}
+          />
+        }
       </div>
     );
   }
